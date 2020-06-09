@@ -11,7 +11,6 @@ import './tabs/home.dart';
 import './tabs/search.dart';
 import './tabs/setting.dart';
 
-
 // Tabs有状态组件
 class Tabs extends StatefulWidget {
   Tabs({Key key}) : super(key: key);
@@ -26,7 +25,6 @@ class _TabsState extends State<Tabs> {
     return BottomBar();
   }
 }
-
 
 // BottomBar有状态组件
 class BottomBar extends StatefulWidget {
@@ -55,6 +53,8 @@ class _BottomBarState extends State<BottomBar> {
             this._currentIndex = index;
           });
         },
+        fixedColor: Colors.pink,//选中的颜色
+        iconSize: 36, //按钮的大小
         currentIndex: this._currentIndex, //当前选中项
         type: BottomNavigationBarType.fixed, //items大于3个的时候要加此属性，否则按钮会变白色
         items: [
