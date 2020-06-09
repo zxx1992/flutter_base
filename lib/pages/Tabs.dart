@@ -38,8 +38,8 @@ class _BottomBarState extends State<BottomBar> {
   // 定义变量
   int _currentIndex = 0;
   List _pageList = [
-    SearchPage(),
     HomePage(),
+    SearchPage(),
     SettingPage(),
   ];
   @override
@@ -49,6 +49,7 @@ class _BottomBarState extends State<BottomBar> {
       body: this._pageList[this._currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         onTap: (int index) {
+          print(index);
           setState(() {
             this._currentIndex = index;
           });

@@ -5,6 +5,8 @@
  */
 import 'package:flutter/material.dart';
 
+import '../product.dart';
+
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
 
@@ -15,8 +17,32 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text("home"),
+    return Column(
+      children: <Widget>[
+        RaisedButton(
+          onPressed: () {
+            //点击路由跳转
+            // Navigator.of(context)
+            //     .push(MaterialPageRoute(builder: (context) => ListPage()));
+            Navigator.pushNamed(context, '/list');
+          },
+          child: Text("跳转到列表页面"),
+          color: Theme.of(context).accentColor,
+          textTheme: ButtonTextTheme.primary,
+        ),
+        RaisedButton(
+          onPressed: () {
+            //点击路由跳转
+            // 遗留问题，下面这种跳转会报错，说是找不到
+            // Navigator.pushNamed(context, '/product');
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => ProductPage()));
+          },
+          child: Text("跳转到商品页面"),
+          color: Theme.of(context).accentColor,
+          textTheme: ButtonTextTheme.primary,
+        ),
+      ],
     );
   }
 }
