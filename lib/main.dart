@@ -19,6 +19,7 @@ import 'pages/user/registerSecond.dart';
 import 'pages/user/registerThird.dart';
 import 'pages/AppBarDemo.dart';
 import 'pages/TabBarController.dart';
+import 'pages/User.dart';
 
 void main() {
   runApp(MyApp());
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
     '/registerThird': (context) => RegisterThirdPage(),
     '/appBarDemo': (context) => AppBarDemoPage(),
     '/tabBarController': (context) => TabBarControllerPage(),
+    '/user': (context) => UserPage(),
   };
   @override
   Widget build(BuildContext context) {
