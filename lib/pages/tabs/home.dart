@@ -5,8 +5,6 @@
  */
 import 'package:flutter/material.dart';
 
-import '../product.dart';
-
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
 
@@ -15,6 +13,142 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+      length: 10,
+      child: Scaffold(
+          appBar: AppBar(
+              backgroundColor: Colors.pink[100],
+              title: TabBar(
+                  isScrollable: true,//左右滑动
+                  indicatorColor: Colors.orange,
+                  indicatorSize: TabBarIndicatorSize.tab,
+                  labelColor: Colors.lightGreen[300], //
+                  unselectedLabelColor: Colors.white, //未选中label颜色
+                  tabs: <Widget>[
+                    Tab(text: "水果1"),
+                    Tab(
+                      text: "水果2",
+                    ),
+                    Tab(
+                      text: "水果3",
+                    ),
+                    Tab(
+                      text: "水果4",
+                    ),
+                    Tab(
+                      text: "水果5",
+                    ),
+                    Tab(
+                      text: "水果6",
+                    ),
+                    Tab(
+                      text: "水果7",
+                    ),
+                    Tab(
+                      text: "水果8",
+                    ),
+                    Tab(
+                      text: "水果9",
+                    ),
+                    Tab(
+                      text: "水果10",
+                    ),
+                  ])),
+          body: TabsBar()),
+    );
+  }
+}
+
+// demo2
+
+class TabsBar extends StatelessWidget {
+  const TabsBar({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return TabBarView(
+      children: <Widget>[
+        ListView(
+          children: <Widget>[
+            ListTile(title: Text("FIRST")),
+            ListTile(title: Text("SECOND")),
+            ListTile(title: Text("THIRD")),
+          ],
+        ),
+        ListView(
+          children: <Widget>[
+            ListTile(title: Text("FIRST")),
+            ListTile(title: Text("SECOND")),
+            ListTile(title: Text("THIRD")),
+          ],
+        ),
+        ListView(
+          children: <Widget>[
+            ListTile(title: Text("FIRST")),
+            ListTile(title: Text("SECOND")),
+            ListTile(title: Text("THIRD")),
+          ],
+        ),
+        ListView(
+          children: <Widget>[
+            ListTile(title: Text("FIRST")),
+            ListTile(title: Text("SECOND")),
+            ListTile(title: Text("THIRD")),
+          ],
+        ),
+        ListView(
+          children: <Widget>[
+            ListTile(title: Text("FIRST")),
+            ListTile(title: Text("SECOND")),
+            ListTile(title: Text("THIRD")),
+          ],
+        ),
+        ListView(
+          children: <Widget>[
+            ListTile(title: Text("FIRST")),
+            ListTile(title: Text("SECOND")),
+            ListTile(title: Text("THIRD")),
+          ],
+        ),
+        ListView(
+          children: <Widget>[
+            ListTile(title: Text("FIRST")),
+            ListTile(title: Text("SECOND")),
+            ListTile(title: Text("THIRD")),
+          ],
+        ),
+        ListView(
+          children: <Widget>[
+            ListTile(title: Text("FIRST")),
+            ListTile(title: Text("SECOND")),
+            ListTile(title: Text("THIRD")),
+          ],
+        ),
+        ListView(
+          children: <Widget>[
+            ListTile(title: Text("FIRST")),
+            ListTile(title: Text("SECOND")),
+            ListTile(title: Text("THIRD")),
+          ],
+        ),
+        ListView(
+          children: <Widget>[
+            ListTile(title: Text("FIRST")),
+            ListTile(title: Text("SECOND")),
+            ListTile(title: Text("THIRD")),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+// demo1
+class Columns extends StatelessWidget {
+  const Columns({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(

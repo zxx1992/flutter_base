@@ -46,6 +46,18 @@ class _SettingPageState extends State<SettingPage> {
           },
           child: Text("跳转到注册页面"),
         ),
+        RaisedButton(
+          onPressed: () {
+            Navigator.pushNamed(context, '/appBarDemo');
+          },
+          child: Text("跳转到Appbbar页面"),
+        ),
+        RaisedButton(
+          onPressed: () {
+            Navigator.pushNamed(context, '/tabBarController');
+          },
+          child: Text("跳转到tabBarController页面"),
+        ),
       ],
     );
   }

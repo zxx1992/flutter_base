@@ -17,6 +17,8 @@ import 'pages/user/login.dart';
 import 'pages/user/registerFirst.dart';
 import 'pages/user/registerSecond.dart';
 import 'pages/user/registerThird.dart';
+import 'pages/AppBarDemo.dart';
+import 'pages/TabBarController.dart';
 
 void main() {
   runApp(MyApp());
@@ -31,13 +33,18 @@ class MyApp extends StatelessWidget {
     '/registerFirst': (context) => RegisterFirstPage(),
     '/registerSecond': (context) => RegisterSecondPage(),
     '/registerThird': (context) => RegisterThirdPage(),
-
+    '/appBarDemo': (context) => AppBarDemoPage(),
+    '/tabBarController': (context) => TabBarControllerPage(),
   };
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
+      //去掉右上角debug图标
+      debugShowCheckedModeBanner: false,
       home: Tabs(),
+      // 默认路由
+      initialRoute: '/appBarDemo',
       //定义命名路由，统一管理
       routes: this.routes,
       // 代码直接从官网拿，可实现跳转传参

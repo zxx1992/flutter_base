@@ -35,7 +35,7 @@ class _TabsState extends State<Tabs> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("BottomNavigationBar组件")),
+      // appBar: AppBar(title: Text("BottomNavigationBar组件")),
       body: this._pageList[this._currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         onTap: (int index) {
