@@ -15,8 +15,9 @@ class SettingPage extends StatefulWidget {
 class _SettingPageState extends State<SettingPage> {
   @override
   Widget build(BuildContext context) {
-    return Column(children: <Widget>[
-      RaisedButton(
+    return Column(
+      children: <Widget>[
+        RaisedButton(
           onPressed: () {
             //点击路由跳转
             // 通过自定义路由进行跳转
@@ -29,6 +30,23 @@ class _SettingPageState extends State<SettingPage> {
         SizedBox(
           height: 20,
         ),
-    ],);
+        RaisedButton(
+          onPressed: () {
+            //点击路由跳转
+            // 通过自定义路由进行跳转
+            Navigator.pushNamed(context, '/login');
+          },
+          child: Text("跳转到登录页面"),
+        ),
+        RaisedButton(
+          onPressed: () {
+            //点击路由跳转
+            // 通过自定义路由进行跳转
+            Navigator.pushNamed(context, '/registerFirst');
+          },
+          child: Text("跳转到注册页面"),
+        ),
+      ],
+    );
   }
 }

@@ -33,10 +33,10 @@ class _HomePageState extends State<HomePage> {
         RaisedButton(
           onPressed: () {
             //点击路由跳转
-            // 遗留问题，下面这种跳转会报错，说是找不到
-            // Navigator.pushNamed(context, '/product');
-            Navigator.of(context)
-                .push(MaterialPageRoute(builder: (context) => ProductPage()));
+            // 遗留问题，下面这种跳转会报错，说是找不到,重启解决了
+            Navigator.pushNamed(context, '/product');
+            // Navigator.of(context)
+            //     .push(MaterialPageRoute(builder: (context) => ProductPage()));
           },
           child: Text("跳转到商品页面"),
           color: Theme.of(context).accentColor,

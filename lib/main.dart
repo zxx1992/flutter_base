@@ -13,6 +13,10 @@ import 'pages/Tabs.dart';
 import 'pages/form.dart';
 import 'pages/list.dart';
 import 'pages/product.dart';
+import 'pages/user/login.dart';
+import 'pages/user/registerFirst.dart';
+import 'pages/user/registerSecond.dart';
+import 'pages/user/registerThird.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,6 +27,11 @@ class MyApp extends StatelessWidget {
     '/form': (context) => FormPage(),
     '/list': (context) => ListPage(),
     '/product': (context) => ProductPage(),
+    '/login': (context) => LoginPage(),
+    '/registerFirst': (context) => RegisterFirstPage(),
+    '/registerSecond': (context) => RegisterSecondPage(),
+    '/registerThird': (context) => RegisterThirdPage(),
+
   };
   @override
   Widget build(BuildContext context) {
