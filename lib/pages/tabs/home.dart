@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
                       text: "水果10",
                     ),
                   ])),
-          body: TabsBar()),
+          body: Columns()),
     );
   }
 }
@@ -173,6 +173,17 @@ class Columns extends StatelessWidget {
             //     .push(MaterialPageRoute(builder: (context) => ProductPage()));
           },
           child: Text("跳转到商品页面"),
+          color: Theme.of(context).accentColor,
+          textTheme: ButtonTextTheme.primary,
+        ),
+        RaisedButton(
+          onPressed: () {
+            //点击路由跳转
+            Navigator.pushNamed(context, '/formDemo');
+            // Navigator.of(context)
+            //     .push(MaterialPageRoute(builder: (context) => ProductPage()));
+          },
+          child: Text("跳转到表单页面"),
           color: Theme.of(context).accentColor,
           textTheme: ButtonTextTheme.primary,
         ),

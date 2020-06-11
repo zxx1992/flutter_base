@@ -21,6 +21,10 @@ import 'pages/AppBarDemo.dart';
 import 'pages/TabBarController.dart';
 import 'pages/User.dart';
 import 'pages/Button.dart';
+import 'pages/TextField.dart';
+import 'pages/Checkbox.dart';
+import 'pages/Radio.dart';
+import 'pages/FormDemo.dart';
 
 void main() {
   runApp(MyApp());
@@ -39,6 +43,10 @@ class MyApp extends StatelessWidget {
     '/tabBarController': (context) => TabBarControllerPage(),
     '/user': (context) => UserPage(),
     '/button': (context) => ButtonPage(),
+    '/textField': (context) => TextFieldPage(),
+    '/checkbox': (context) => CheckBoxDemo(),
+    '/radio': (context) => RadioDemo(),
+    '/formDemo': (context) => FormDemoPage(),
   };
   @override
   Widget build(BuildContext context) {
@@ -48,7 +56,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Tabs(),
       // 默认路由
-      initialRoute: '/button',
+      // initialRoute: '/formDemo',
       //定义命名路由，统一管理
       routes: this.routes,
       // 代码直接从官网拿，可实现跳转传参
