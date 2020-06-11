@@ -20,6 +20,7 @@ import 'pages/user/registerThird.dart';
 import 'pages/AppBarDemo.dart';
 import 'pages/TabBarController.dart';
 import 'pages/User.dart';
+import 'pages/Button.dart';
 
 void main() {
   runApp(MyApp());
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
     '/appBarDemo': (context) => AppBarDemoPage(),
     '/tabBarController': (context) => TabBarControllerPage(),
     '/user': (context) => UserPage(),
+    '/button': (context) => ButtonPage(),
   };
   @override
   Widget build(BuildContext context) {
@@ -46,7 +48,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Tabs(),
       // 默认路由
-      initialRoute: '/appBarDemo',
+      initialRoute: '/button',
       //定义命名路由，统一管理
       routes: this.routes,
       // 代码直接从官网拿，可实现跳转传参
