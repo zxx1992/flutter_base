@@ -4,6 +4,8 @@
  * @Description: Do not edit
  */
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;//引入http库
+import 'dart:convert'; //map和json互换
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
@@ -14,6 +16,35 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    Map userInfo = {
+      "username": "张三",
+      "age": 20,
+    };
+
+    print(json.encode(userInfo)); // MAP  转为 String
+
+    String username = '{"age":20}';
+
+    print(json.decode(username)); // json 转为 Map
+  }
+
+  // 请求数据
+
+  _getData() {
+    var apiUrl = "";
+    var result = await http.get(apiUrl);
+    if (result.statusCode == 200) {
+      print(result.body);
+    } else {
+      print(result.statusCode);
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 10,
@@ -21,7 +52,7 @@ class _HomePageState extends State<HomePage> {
           appBar: AppBar(
               backgroundColor: Colors.pink[100],
               title: TabBar(
-                  isScrollable: true,//左右滑动
+                  isScrollable: true, //左右滑动
                   indicatorColor: Colors.orange,
                   indicatorSize: TabBarIndicatorSize.tab,
                   labelColor: Colors.lightGreen[300], //
@@ -182,6 +213,32 @@ class Columns extends StatelessWidget {
             Navigator.pushNamed(context, '/formDemo');
             // Navigator.of(context)
             //     .push(MaterialPageRoute(builder: (context) => ProductPage()));
+          },
+          child: Text("跳转到表单页面"),
+          color: Theme.of(context).accentColor,
+          textTheme: ButtonTextTheme.primary,
+        ),
+        // get请求
+        RaisedButton(
+          onPressed: _getData,
+          child: Text("get请求"),
+          color: Theme.of(context).accentColor,
+          textTheme: ButtonTextTheme.primary,
+        ),
+        // post请求
+        RaisedButton(
+          onPressed: () {
+            //点击路由跳转
+            Navigator.pushNamed(context, '/formDemo');
+          },
+          child: Text("post请求"),
+          color: Theme.of(context).accentColor,
+          textTheme: ButtonTextTheme.primary,
+        ),
+        RaisedButton(
+          onPressed: () {
+            //点击路由跳转
+            Navigator.pushNamed(context, '/formDemo');
           },
           child: Text("跳转到表单页面"),
           color: Theme.of(context).accentColor,
